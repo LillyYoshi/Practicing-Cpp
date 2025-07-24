@@ -25,6 +25,7 @@ int main ()
 {
 
     Human human1;
+    Human human2;
 
     human1.name = "Rick";
     human1.job = "State Farm Agent";
@@ -34,9 +35,17 @@ int main ()
     std::cout << human1.job << "\n";
     std::cout << human1.age << "\n";
 
-    human1.eat();
-    human1.drink();
-    human1.sleep();
+    human2.name = "Marissa";
+    human2.job = "Insurance Agent";
+    human2.age = 55;
+
+    std::cout << human2.name << "\n";
+    std::cout << human2.job << "\n";
+    std::cout << human2.age << "\n";
+
+    human2.eat();
+    human2.drink();
+    human2.sleep();
 
     return 0;
 }
