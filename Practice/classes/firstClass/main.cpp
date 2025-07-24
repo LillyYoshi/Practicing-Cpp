@@ -33,6 +33,8 @@ int main ()
     std::cout << human1.name << "\n";
     std::cout << human1.job << "\n";
     std::cout << human1.age << "\n";
-    
+
+    human1.eat();
+
     return 0;
 }
