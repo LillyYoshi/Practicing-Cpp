@@ -35,6 +35,8 @@ int main ()
     std::cout << human1.age << "\n";
 
     human1.eat();
+    human1.drink();
+    human1.sleep();
 
     return 0;
 }
