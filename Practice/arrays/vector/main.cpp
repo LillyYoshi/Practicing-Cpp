@@ -28,18 +28,23 @@ int main() {
     sum[1] = getInt(y);
     sum[2] = getInt(z);
 
+   int sumTotal {};
+
     // Sum of vector using loop
     for (size_t i {0}; i < sum.size(); i++) {
-        int sumTotal {};
         sumTotal += sum[i];
-        std::cout << "The sum is: " << sumTotal << std::endl;
     };
+
+    std::cout << "The sum is: " << sumTotal << std::endl;
+    
+    int multTotal {1}; // Can't be 0 when working with mult
 
     // Product of vector using loop
      for (size_t i {0}; i < sum.size(); i++) {
-        int multTotal {1}; // Can't be 0 when working with mult
         multTotal *= sum[i];
-        std::cout << "The product is: " << multTotal << std::endl;
     };
+
+    std::cout << "The product is: " << multTotal << std::endl;
+
 return 0;
 }
