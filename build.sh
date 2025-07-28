@@ -1,25 +1,21 @@
+@ -0,0 +1,20 @@
 #!/bin/bash
 
-FOLDER=$1
+MAIN=${1}
 OUT=${2:-myprogram}
 
-if [[ -z $FOLDER ]]; then
-  echo "Usage: $0 folder-containing-maincpp [optional-output-name]"
+if [[ -z $MAIN ]]; then
+  echo "Usage: $0 path/to/main.cpp [optional-output-name]"
   exit 1
 fi
 
-MAIN="$FOLDER/main.cpp"
+cd "$(dirname "$0")" || { echo "Failed to cd to script directory"; exit 1; }
 
-if [[ ! -f "$MAIN" ]]; then
-  echo "Error: $MAIN not found."
-  exit 1
-fi
+OUTDIR=$(dirname "$MAIN")
+mkdir -p "$OUTDIR"
 
-clang++ -std=c++20 -Wall -Wextra "$MAIN" myFn/*.cpp -Iheaders -o "$FOLDER/$OUT"
-if [[ $? -eq 0 ]]; then
-  echo "Build succeeded. Running $OUT..."
-  "$FOLDER/$OUT"
-else
-  echo "Build failed."
-  exit 1
-fi
+# Optional: set bash to expand globs to empty if no matches, avoids errors if no cpp files there
+shopt -s nullglob
+
+# Use the $MAIN argument here instead of hardcoded main.cpp
+clang++ -std=c++20 -Wall -Wextra "$MAIN" myFn/*.cpp -Iheaders -o "$OUTDIR/$OUT"

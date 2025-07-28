@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "myLib.h"
 
 /*
@@ -10,8 +11,35 @@ The output should match the following:
 Enter 3 integers: 3 4 5
 The sum is: 12
 The product is: 60
+
+--- I did not follow the instructions to a T as I can use already created functions
 */
 
 int main() {
-    
+
+    // Initializing vector with 3 placeholders
+    std::vector<int> sum(3); 
+
+    std::cout << "Enter 3 Integers: \n";
+
+    // Assigning 3 user input values from getInt fn
+    int x{}, y{}, z{};
+    sum[0] = getInt(x);
+    sum[1] = getInt(y);
+    sum[2] = getInt(z);
+
+    // Sum of vector using loop
+    for (int i {0}; i < sum.size(); i++) {
+        int sumTotal {};
+        sumTotal += sum[i];
+        std::cout << "The sum is: " << sumTotal << std::endl;
+    };
+
+    // Product of vector using loop
+     for (int i {0}; i < sum.size(); i++) {
+        int multTotal {};
+        multTotal *= sum[i];
+        std::cout << "The product is: " << multTotal << std::endl;
+    };
+return 0;
 }
