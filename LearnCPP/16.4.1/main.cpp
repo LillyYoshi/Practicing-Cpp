@@ -2,7 +2,7 @@
 #include <vector>
 
 template <typename T>
-void printElement(const std::vector<T>& arr, ssize_t indice) 
+void printElement(const std::vector<T>& arr, size_t indice) 
 {
     std::cout << arr.size();
     if (indice >= 0 && static_cast<size_t>(indice) <arr.size()) {
