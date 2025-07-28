@@ -9,7 +9,7 @@ void printElement(const std::vector<T>& arr, ssize_t indice)
         std::cout << "The element has value: " << indice << '\n';
     }
     else {
-        std::cout << "Invalid Index.";
+        std::cout << "Invalid Index.\n";
     }
 }
     int main()
