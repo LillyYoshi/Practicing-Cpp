@@ -29,7 +29,7 @@ int main() {
     sum[2] = getInt(z);
 
     // Sum of vector using loop
-    for (int i {0}; i < sum.size(); i++) {
+    for (size_t i {0}; i < sum.size(); i++) {
         int sumTotal {};
         sumTotal += sum[i];
         std::cout << "The sum is: " << sumTotal << std::endl;
