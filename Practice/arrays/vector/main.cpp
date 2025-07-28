@@ -37,7 +37,7 @@ int main() {
 
     // Product of vector using loop
      for (size_t i {0}; i < sum.size(); i++) {
-        int multTotal {};
+        int multTotal {1}; // Can't be 0 when working with mult
         multTotal *= sum[i];
         std::cout << "The product is: " << multTotal << std::endl;
     };
