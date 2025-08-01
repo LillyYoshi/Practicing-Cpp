@@ -34,7 +34,10 @@ int main()
 
     std::cout << b.getX() << b.getY() << "\n";
 
+    Foo f;
+    f.setX(88);
 
+    std::cout << f.getX() << "\n";
 
 return 0;
 }
