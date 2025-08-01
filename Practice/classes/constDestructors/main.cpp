@@ -8,7 +8,7 @@ class Base
     int a, b;
 
     public:
-    Base() { a = 0; b = 0; cout << "Base constructor\n"; }
+    Base() { a = 0; b = 0; }
     Base(int x, int y) { a = x, b = y; }
     ~Base() {}
 
@@ -19,22 +19,19 @@ class Base
 class Derived : public Base
 {   
     private:
-    int s;
+    Base::Base;
 
     public:
-    Derived(int q, int r, int x) : Base (q, r) { s = x; };
-    int getS() const { return s; }
+
 };
 
 
 
 int main()
 {
-    Derived d(8, 3, 5);
+    Derived d(8, 3);
 
     d.print();
-
-    cout << d.getS() << "\n";
 
 return 0;
 };
