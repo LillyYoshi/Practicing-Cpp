@@ -10,7 +10,7 @@ class Base
     public:
     Base() { a = 0; b = 0; cout << "Base constructor\n"; }
     Base(int x, int y) { a = x, b = y; }
-    ~Base() { cout << "Base destructor\n"; }
+    ~Base() {}
 
     void print() const { cout << a << ", " << b << "\n"; }
 
@@ -18,20 +18,23 @@ class Base
 
 class Derived : public Base
 {   
+    private:
+    int s;
+
     public:
-    Derived() { cout << "Derived constructor\n"; }
-    ~Derived () { cout << "Derived destructor\n"; }
+    Derived(int q, int r, int x) : Base (q, r) { s = x; };
+    int getS() const { return s; }
 };
 
 
 
 int main()
 {
-    // base, derived
-    Derived* p = new Derived;
+    Derived d(8, 3, 5);
 
-    // derived, base
-    delete p;
+    d.print();
+
+    cout << d.getS() << "\n";
 
 return 0;
 };
